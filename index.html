@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chris Jericho Sembiring | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Innovative software engineer specializing in web development and digital solutions"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/icon.png" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS CDN (v3.4.1) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f9ff",
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                300: "#7dd3fc",
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
+                700: "#0369a1",
+                800: "#075985",
+                900: "#0c4a6e",
+              },
+              dark: {
+                900: "#0f172a",
+                800: "#1e293b",
+                700: "#334155",
+                600: "#475569",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              gradient: "gradient 8s ease infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-20px)" },
+              },
+              gradient: {
+                "0%, 100%": { "background-position": "0% 50%" },
+                "50%": { "background-position": "100% 50%" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <! -- css -- >
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body
+    class="font-sans bg-gray-50 text-gray-800 dark:bg-dark-900 dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-dark-900 transition-opacity duration-500"
+    >
+      <div
+        class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-500"
+      ></div>
+    </div>
+
+    <!-- Navigation -->
+    <header
+      class="fixed w-full z-40 backdrop-blur-md bg-white/80 dark:bg-dark-900/80 shadow-sm"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a
+          href="#home"
+          class="text-2xl font-bold text-primary-600 dark:text-primary-400"
+          >lhrii_<span class="text-dark-900 dark:text-white"
+            >Chris Jericho Sembiring</span
+          ></a
+        >
+
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-700"
+          >
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block"></i>
+          </button>
+
+          <a href="#" class="btn-primary hidden md:inline-flex items-center">
+            <span>Resume</span>
+            <i class="fas fa-download ml-2"></i>
+          </a>
+
+          <button
+            id="mobile-menu-button"
+            class="md:hidden p-2 rounded-full hover:bg-gray-200 dark:hover:bg-dark-700"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 right-0 bg-white dark:bg-dark-800 shadow-lg py-4 px-6"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#" class="btn-primary w-full text-center py-2">
+            <span>Resume</span>
+            <i class="fas fa-download ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+      <div
+        class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center"
+      >
+        <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Hi, I'm
+            <span class="text-primary-600 dark:text-primary-400"
+              >Chris Jericho Sembiring</span
+            >
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+            <span class="text-gray-600 dark:text-gray-400">I build </span>
+            <span
+              id="typed"
+              class="text-primary-600 dark:text-primary-400"
+            ></span>
+          </h2>
+          <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+            Full Stack Developer yang mengkhususkan diri dalam membangun
+            pengalaman digital yang luar biasa. Saat ini berfokus pada
+            pengembangan aplikasi yang mudah diakses dan berpusat pada manusia.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="btn-primary">
+              <span>View Projects</span>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Contact Me</span>
+              <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+          <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full blur-xl opacity-20 animate-pulse"
+            ></div>
+            <img
+              src="assets/img/aku.JPG"
+              alt="Chris Jericho"
+              class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-dark-800 shadow-lg animate-float"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a
+          href="#about"
+          class="p-3 rounded-full bg-white dark:bg-dark-700 shadow-md hover:bg-primary-500 hover:text-white transition-all duration-300"
+        >
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-dark-800">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="text-gray-500 dark:text-gray-400">01.</span> About Me
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2" data-aos="fade-right">
+            <div class="relative">
+              <div
+                class="absolute -inset-4 bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl blur opacity-25"
+              ></div>
+              <img
+                src="assets/img/me.JPG"
+                alt="Chris Jericho"
+                class="relative rounded-2xl shadow-xl w-full h-auto"
+              />
+            </div>
+          </div>
+
+          <div class="md:w-1/2" data-aos="fade-left">
+            <p class="mb-6 text-lg">
+              Halo! Nama saya Chris, mahasiswa pengembangan perangkat lunak asal
+              Batam, Indonesia. Ketertarikan saya terhadap teknologi muncul
+              sejak kecil karena rasa penasaran terhadap bagaimana komputer
+              bekerja. Dari situlah perjalanan saya di dunia pemrograman
+              dimulai.
+            </p>
+            <p class="mb-6 text-lg">
+              Saya terbiasa membuat aplikasi web full-stack dengan memanfaatkan
+              teknologi masa kini. Saat ini, saya tengah fokus menciptakan
+              solusi digital yang sederhana, mudah diakses, dan nyaman
+              digunakan, khususnya sebagai bagian dari studi saya di
+              <span class="text-primary-600 dark:text-primary-400 font-medium"
+                >Politeknik Negeri Batam</span
+              >
+              sambil terus meningkatkan kemampuan saya di bidang komputasi awan
+              dan kecerdasan buatan.
+            </p>
+            <p class="mb-8 text-lg">
+              Di waktu luang, saya suka ikut serta dalam proyek open-source,
+              belajar teknologi baru, atau sekadar menikmati film fiksi ilmiah
+              yang sering memberi saya ide segar.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4">
+                Teknologi yang Saya Gunakan:
+                </h3>
+                <div class="grid grid-cols-2 gap-3">
+                <div class="flex items-center">
+                    <i class="fab fa-laravel text-primary-500 mr-2"></i>
+                    <span>Laravel</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fab fa-php text-primary-500 mr-2"></i>
+                    <span>PHP</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fab fa-python text-primary-500 mr-2"></i>
+                    <span>Python</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-code text-primary-500 mr-2"></i>
+                    <span>Tailwind CSS</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-database text-primary-500 mr-2"></i>
+                    <span>MySQL</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-database text-primary-500 mr-2"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="text-gray-500 dark:text-gray-400">02.</span> My Skills
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Skill Card 1 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-html5 text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">HTML5</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-css3-alt text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">CSS3</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-js text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">JavaScript</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-react text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">React.js</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 20%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-node-js text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Node.js</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 25%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6 -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fas fa-database text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Mysql</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 7 - Laravel -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="600"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fas fa-code text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Laravel</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 8 - Python -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="700"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-python text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Python</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 9 - Tailwind CSS -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="800"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fas fa-wind text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Tailwind CSS</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 65%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 10 - Git -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="900"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-git-alt text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Git</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 11 - Express.js -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="1000"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fas fa-server text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Express.js</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 25%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+
+          <!-- New Skill Card 12 - Docker -->
+          <div
+            class="bg-white dark:bg-dark-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="zoom-in"
+            data-aos-delay="1100"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="p-3 rounded-lg bg-primary-100 dark:bg-primary-900/30 mr-4"
+              >
+                <i
+                  class="fab fa-docker text-primary-600 dark:text-primary-400 text-2xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold">Docker</h3>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 50%"></div>
+            </div>
+            <div
+              class="flex justify-between mt-2 text-sm text-gray-500 dark:text-gray-400"
+            >
+              <span>Beginner</span>
+              <span>Expert</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-dark-800">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="text-gray-500 dark:text-gray-400">03.</span> Featured
+          Projects
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card" data-aos="fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="MBKM Application"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Aplikasi Pengajuan MBKM</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Sebuah platform lengkap untuk mengelola aplikasi program MBKM,
+                dilengkapi dengan dashboard admin, pelacakan pengajuan, dan
+                fitur pelaporan.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">html</span>
+                <span class="tech-tag">css</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="https://github.com/lchrii/PBL117-PengajuanUsulanMBKM.git"
+                  class="text-primary-600 dark:text-primary-400 hover:underline"
+                >
+                  <i class="fab fa-github mr-1"></i> Code
+                </a>
+                <a
+                  href="#"
+                  class="text-primary-600 dark:text-primary-400 hover:underline"
+                >
+                  <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="E-commerce Platform"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Math-room</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Aplikasi Maths-Room adalah aplikasi flashcard interaktif untuk
+                belajar rumus-rumus matematika dasar dengan cara yang
+                menyenangkan. Aplikasi ini cocok untuk pelajar SMP/SMA yang
+                ingin mempelajari
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-tag">html</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="flex space-x-4">
+                <a
+                  href="https://github.com/lchrii/Maths-room.git"
+                  class="text-primary-600 dark:text-primary-400 hover:underline"
+                >
+                  <i class="fab fa-github mr-1"></i> Code
+                </a>
+                <a
+                  href="#"
+                  class="text-primary-600 dark:text-primary-400 hover:underline"
+                >
+                  <i class="fas fa-external-link-alt mr-1"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12" data-aos="fade-up">
+          <a href="#" class="btn-primary inline-flex items-center">
+            <span>View All Projects</span>
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title" data-aos="fade-up">
+          <span class="text-gray-500 dark:text-gray-400">04.</span> Get In Touch
+        </h2>
+
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2" data-aos="fade-right">
+            <h3 class="text-2xl font-semibold mb-6">Mari Terhubung</h3>
+            <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">
+              Saat ini saya sedang mencari peluang baru dan proyek-proyek
+              menarik. Jika kamu punya pertanyaan atau sekadar ingin menyapa,
+              saya akan berusaha membalas secepat mungkin!
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <div
+                  class="p-3 rounded-full bg-primary-100 dark:bg-primary-900/30 mr-4"
+                >
+                  <i
+                    class="fas fa-envelope text-primary-600 dark:text-primary-400"
+                  ></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Email Me At</h4>
+                  <a
+                    href="mailto:meliala366m12@gmail.com"
+                    class="text-primary-600 dark:text-primary-400 hover:underline"
+                  >
+                    meliala366m12@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="p-3 rounded-full bg-primary-100 dark:bg-primary-900/30 mr-4"
+                >
+                  <i
+                    class="fas fa-phone-alt text-primary-600 dark:text-primary-400"
+                  ></i>
+                </div>
+                <div>
+                  <h4 class="font-medium">Call Me At</h4>
+                  <a
+                    href="tel:+6289623348644"
+                    class="text-primary-600 dark:text-primary-400 hover:underline"
+                  >
+                    +62 89623348644
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="font-medium mb-4">Follow Me</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="https://github.com/lchrii"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/lhrii_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/chris-jericho-sembiring-380654206/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@lchrii_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <i class="fab fa-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2" data-aos="fade-left">
+            <form class="space-y-6">
+              <div>
+                <label for="name" class="block mb-2 font-medium"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block mb-2 font-medium"
+                  >Your Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                />
+              </div>
+
+              <div>
+                <label for="subject" class="block mb-2 font-medium"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                />
+              </div>
+
+              <div>
+                <label for="message" class="block mb-2 font-medium"
+                  >Your Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-dark-700 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane ml-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-dark-800">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <a
+              href="#home"
+              class="text-2xl font-bold text-primary-600 dark:text-primary-400"
+              >Chris<span class="text-dark-900 dark:text-white"
+                >Jericho</span
+              ></a
+            >
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              Building digital experiences that matter
+            </p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a
+              href="#home"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-200 dark:border-dark-700 mt-8 pt-8 text-center text-gray-500 dark:text-gray-400"
+        >
+          <p>
+            &copy; <span id="current-year"></span> Chris Jericho Sembiring. All
+            rights reserved.
+          </p>
+          <p class="mt-2">
+            Made with <i class="fas fa-heart text-red-500"></i> and
+            <i class="fas fa-coffee text-amber-600"></i>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a
+      href="#home"
+      id="back-to-top"
+      class="fixed bottom-8 right-8 p-3 bg-primary-600 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-700"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Main Script -->
+    <script>
+      // Preloader
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 500);
+      });
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Theme Toggle
+      const themeToggle = document.getElementById("theme-toggle");
+
+      themeToggle.addEventListener("click", function () {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+      });
+
+      // Check for saved theme preference
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+
+      // Initialize Typed.js
+      const typed = new Typed("#typed", {
+        strings: ["web apps", "web development", "Full Stack development"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+      });
+
+      // Back to Top Button
+      const backToTopButton = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove("opacity-0", "invisible");
+          backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+          backToTopButton.classList.remove("opacity-100", "visible");
+          backToTopButton.classList.add("opacity-0", "invisible");
+        }
+      });
+
+      // Set current year
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
